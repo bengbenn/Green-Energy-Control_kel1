@@ -60,14 +60,6 @@ GreenEnergyApp
    flutter run
    ```
 
-## 📸 Screenshot
-
-Tambahkan screenshot aplikasi pada folder `screenshots/`, meliputi:
-- Dashboard awal
-- Hasil Tap
-- Hasil Long Press
-- Hasil Drag/Pan
-
 ## 👥 Identitas Kelompok
 
 | Nama Anggota | NIM |
@@ -76,7 +68,7 @@ Tambahkan screenshot aplikasi pada folder `screenshots/`, meliputi:
 | Maya Dwi Apriyani | 202431159 |
 | Virginia Kadiwaru | 202331258 |
 
-**Kelas:** Pemograman Mobule F
+**Kelas:** Pemograman Mobile F
 
 **Repository:** https://github.com/bengbenn/Green-Energy-Control_kel1.git
 
