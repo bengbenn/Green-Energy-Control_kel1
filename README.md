@@ -72,13 +72,13 @@ Tambahkan screenshot aplikasi pada folder `screenshots/`, meliputi:
 
 | Nama Anggota | NIM |
 |---|---|
-| [Benedict Samuel Ardy] | [202431149] |
-| [Maya Dwi Apriyani] | [202431159] |
-| [Virginia Kadiwaru] | [202331258] |
+| Benedict Samuel Ardy | 202431149 |
+| Maya Dwi Apriyani | 202431159 |
+| Virginia Kadiwaru | 202331258 |
 
-**Kelas:** [Pemograman Mobule F]
+**Kelas:** Pemograman Mobule F
 
-**Repository:** [Link GitHub]
+**Repository:** https://github.com/bengbenn/Green-Energy-Control_kel1.git
 
 ## 🌍 SDG 7
 
