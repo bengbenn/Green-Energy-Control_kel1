@@ -1,77 +1,52 @@
-# 🌱 Green Energy Control
+# Green Energy Control
 
-Aplikasi mobile interaktif berbasis Flutter untuk simulasi kontrol energi terbarukan dengan gesture sentuhan. Aplikasi ini mengangkat tema **SDG 7: Energi Bersih dan Terjangkau**.
+## Deskripsi Aplikasi
+Green Energy Control adalah aplikasi Flutter interaktif untuk simulasi pemantauan energi terbarukan. Aplikasi ini memungkinkan pengguna mengontrol lampu dan memindahkan panel surya virtual melalui interaksi mouse di Chrome.
 
-## ✨ Fitur Utama
+## Tujuan
+- Menerapkan layout kompleks pada Flutter.
+- Menggunakan GestureDetector untuk menangani interaksi pengguna.
+- Mengelola perubahan tampilan menggunakan setState().
+- Mengenalkan energi bersih yang mendukung SDG 7.
 
-- **Dashboard Energi:** Menampilkan simulasi energi surya dan penggunaan listrik.
-- **Tap:** Mengubah status lampu dan panel surya (ON/OFF).
-- **Long Press:** Menampilkan dialog informasi energi.
-- **Drag/Pan:** Memindahkan panel surya secara real-time.
-- **Interactive UI:** Menggunakan `Card`, `Row`, `Column`, dan `Stack`.
+## Fitur Aplikasi
+1. Dashboard ringkasan energi surya dan penggunaan listrik.
+2. Tap untuk mengubah status lampu dan panel surya.
+3. Long Press untuk menampilkan dialog detail energi.
+4. Drag/Pan untuk memindahkan panel surya secara real-time.
+5. Informasi tentang SDG 7: Energi Bersih dan Terjangkau.
 
-## 🛠️ Teknologi
-
+## Teknologi
 - Flutter
 - Dart
-- Material Design 3
-- `StatefulWidget` dan `setState()`
-- `GestureDetector`
+- Material Design
+- GestureDetector
+- StatefulWidget dan setState()
 
-## 🏗️ Struktur Widget
+## Cara Menjalankan
+Pastikan Flutter sudah terpasang dan Chrome tersedia.
 
-```text
-GreenEnergyApp
-└── EnergyDashboard
-    └── Scaffold
-        ├── AppBar
-        └── SingleChildScrollView
-            └── Column
-                ├── Row (Ringkasan Energi)
-                ├── Card (Kontrol Lampu)
-                ├── Stack (Simulasi Panel Surya)
-                │   └── GestureDetector
-                └── Card (Informasi SDG 7)
+Jalankan perintah berikut pada terminal:
+
+```bash
+flutter pub get
+flutter run -d chrome
 ```
 
-## 🚀 Cara Menjalankan
+## Hasil Pengujian Gesture
 
-1. Clone repository:
+| Gesture | Hasil | Keterangan |
+|---|---|---|
+| Tap | Berhasil | Status dan warna perangkat berubah |
+| Long Press | Berhasil | Dialog detail energi muncul |
+| Drag/Pan | Berhasil | Panel surya berpindah mengikuti mouse |
 
-   ```bash
-   git clone https://github.com/bengbenn/green-energy-control_kel1.git
-   ```
+Pengujian dilakukan pada Chrome. Data energi yang tampil merupakan data simulasi, bukan pembacaan sensor fisik.
 
-2. Masuk ke folder proyek:
+## Anggota Kelompok
+- Anggota 1: [Benedict Samuel Ardy] | NIM: [202431149]
+- Anggota 2: [Maya Dwi Apriyani] | NIM: [202431159]
+- Anggota 3: [Virginia Kadiwaru] NIM: [202331258]
 
-   ```bash
-   cd green-energy-control_kel1
-   ```
-
-3. Instal dependensi:
-
-   ```bash
-   flutter pub get
-   ```
-
-4. Jalankan aplikasi:
-
-   ```bash
-   flutter run
-   ```
-
-## 👥 Identitas Kelompok
-
-| Nama Anggota | NIM |
-|---|---|
-| Benedict Samuel Ardy | 202431149 |
-| Maya Dwi Apriyani | 202431159 |
-| Virginia Kadiwaru | 202331258 |
-
-**Kelas:** Pemograman Mobile F
-
-**Repository:** https://github.com/bengbenn/Green-Energy-Control_kel1.git
-
-## 🌍 SDG 7
-
-Aplikasi ini merupakan simulasi pembelajaran yang memperkenalkan konsep energi terbarukan dan penggunaan energi secara efisien. Data energi yang ditampilkan bersifat simulasi, bukan hasil pengukuran perangkat nyata.
+## Repository
+[Green Energy Control di GitHub](https://github.com/bengbenn/Green-Energy-Control_kel1)

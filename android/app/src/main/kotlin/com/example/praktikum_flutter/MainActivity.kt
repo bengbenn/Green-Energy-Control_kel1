@@ -1,4 +1,4 @@
-package com.example.green_energy_control_kel1
+package com.example.praktikum_flutter
 
 import io.flutter.embedding.android.FlutterActivity
 
