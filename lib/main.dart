@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,8 +32,7 @@ class EnergyDashboard extends StatefulWidget {
       _EnergyDashboardState();
 }
 
-class _EnergyDashboardState
-    extends State<EnergyDashboard> {
+class _EnergyDashboardState extends State<EnergyDashboard> {
   bool lampOn = false;
   bool solarOn = true;
 
@@ -78,10 +78,12 @@ class _EnergyDashboardState
               ),
             ),
             const SizedBox(height: 6),
-            const Text('Kelola energi bersih secara interaktif.'),
+            const Text(
+              'Kelola energi bersih secara interaktif.',
+            ),
             const SizedBox(height: 16),
 
-            // Row: ringkasan energi
+            // Row: Ringkasan energi
             Row(
               children: [
                 Expanded(
@@ -90,8 +92,11 @@ class _EnergyDashboardState
                       padding: const EdgeInsets.all(16),
                       child: Column(
                         children: const [
-                          Icon(Icons.solar_power,
-                              color: Colors.green, size: 32),
+                          Icon(
+                            Icons.solar_power,
+                            color: Colors.green,
+                            size: 32,
+                          ),
                           Text('Energi Surya'),
                           Text(
                             '3.5 kWh',
@@ -110,8 +115,11 @@ class _EnergyDashboardState
                       padding: const EdgeInsets.all(16),
                       child: Column(
                         children: const [
-                          Icon(Icons.bolt,
-                              color: Colors.orange, size: 32),
+                          Icon(
+                            Icons.bolt,
+                            color: Colors.orange,
+                            size: 32,
+                          ),
                           Text('Penggunaan'),
                           Text(
                             '2.1 kWh',
@@ -136,7 +144,7 @@ class _EnergyDashboardState
               ),
             ),
 
-            // Tap dan Long Press
+            // Tap dan Long Press pada kartu lampu
             GestureDetector(
               onTap: () {
                 setState(() {
@@ -150,8 +158,12 @@ class _EnergyDashboardState
                     : Colors.grey.shade200,
                 child: ListTile(
                   leading: Icon(
-                    lampOn ? Icons.lightbulb : Icons.lightbulb_outline,
-                    color: lampOn ? Colors.orange : Colors.grey,
+                    lampOn
+                        ? Icons.lightbulb
+                        : Icons.lightbulb_outline,
+                    color: lampOn
+                        ? Colors.orange
+                        : Colors.grey,
                     size: 36,
                   ),
                   title: const Text('Lampu Hemat Energi'),
@@ -171,14 +183,15 @@ class _EnergyDashboardState
                 fontWeight: FontWeight.bold,
               ),
             ),
+            const SizedBox(height: 6),
             const Text(
-              'Geser panel dengan jari. Tekan untuk '
-              'mengaktifkan atau menonaktifkan panel. '
-              'Tekan lama untuk melihat detail.',
+              'Geser panel dengan mouse. Klik panel untuk '
+              'mengubah status dan tekan lama untuk '
+              'melihat detail energi.',
             ),
             const SizedBox(height: 10),
 
-            // Stack: area panel dapat digeser
+            // Stack: area simulasi panel surya
             LayoutBuilder(
               builder: (context, constraints) {
                 const panelWidth = 100.0;
@@ -187,12 +200,14 @@ class _EnergyDashboardState
 
                 final maxX = (constraints.maxWidth -
                         panelWidth)
-                    .clamp(0.0, double.infinity);
+                    .clamp(0.0, double.infinity)
+                    .toDouble();
+
                 const maxY = areaHeight - panelHeight;
 
                 final safePosition = Offset(
-                  panelPosition.dx.clamp(0.0, maxX),
-                  panelPosition.dy.clamp(0.0, maxY),
+                  panelPosition.dx.clamp(0.0, maxX).toDouble(),
+                  panelPosition.dy.clamp(0.0, maxY).toDouble(),
                 );
 
                 return Container(
@@ -212,28 +227,37 @@ class _EnergyDashboardState
                         top: 12,
                         child: Text('Area Simulasi'),
                       ),
+
                       Positioned(
                         left: safePosition.dx,
                         top: safePosition.dy,
                         child: GestureDetector(
+                          // Gesture 1: Tap
                           onTap: () {
                             setState(() {
                               solarOn = !solarOn;
                             });
                           },
+
+                          // Gesture 2: Long Press
                           onLongPress: showEnergyDetails,
+
+                          // Gesture 3: Drag/Pan
                           onPanUpdate: (details) {
                             setState(() {
                               panelPosition = Offset(
                                 (panelPosition.dx +
                                         details.delta.dx)
-                                    .clamp(0.0, maxX),
+                                    .clamp(0.0, maxX)
+                                    .toDouble(),
                                 (panelPosition.dy +
                                         details.delta.dy)
-                                    .clamp(0.0, maxY),
+                                    .clamp(0.0, maxY)
+                                    .toDouble(),
                               );
                             });
                           },
+
                           child: Card(
                             color: solarOn
                                 ? Colors.green.shade200
@@ -255,7 +279,9 @@ class _EnergyDashboardState
                                   const Text(
                                     'Panel Surya',
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(fontSize: 12),
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                    ),
                                   ),
                                   Text(
                                     solarOn ? 'ON' : 'OFF',
@@ -276,12 +302,18 @@ class _EnergyDashboardState
             ),
 
             const SizedBox(height: 16),
+
+            // Informasi SDG 7
             const Card(
               child: Padding(
                 padding: EdgeInsets.all(16),
                 child: Row(
                   children: [
-                    Icon(Icons.eco, color: Colors.green, size: 32),
+                    Icon(
+                      Icons.eco,
+                      color: Colors.green,
+                      size: 32,
+                    ),
                     SizedBox(width: 12),
                     Expanded(
                       child: Text(
